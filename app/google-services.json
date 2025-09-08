@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "622337953195",
+    "project_id": "lizaventas-267bb",
+    "storage_bucket": "lizaventas-267bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622337953195:android:076d0be0e82da1cac9d6ee",
+        "android_client_info": {
+          "package_name": "com.lizaventas.lizachick"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkiP7-sq2giWDgOaaW2HnF6pXZhW4CBqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="?attr/selectableItemBackground">
+
+        <!-- Total -->
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="S/ 0.00"
+            android:textColor="@color/primary_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="start" />
+
+        <!-- Fecha -->
+        <TextView
+            android:id="@+id/tvFecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="01/01/2024"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <!-- Productos -->
+        <TextView
+            android:id="@+id/tvProductos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:text="0 items"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <!-- Medio de Pago -->
+        <TextView
+            android:id="@+id/tvMedioPago"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="Efectivo"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <!-- Cliente -->
+        <TextView
+            android:id="@+id/tvCliente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Cliente"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:gravity="end"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

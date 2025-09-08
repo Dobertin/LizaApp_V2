@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Estilos para DatePicker y TimePicker oscuros -->
+    <style name="DatePickerDialogDark" parent="Theme.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorAccent">@color/primary_color</item>
+        <item name="android:background">@color/card_background_dark</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="TimePickerDialogDark" parent="Theme.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorAccent">@color/primary_color</item>
+        <item name="android:background">@color/card_background_dark</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <!-- Estilo para botones de diálogo -->
+    <style name="DialogButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/primary_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/primary_color</item>
+
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+    <!-- Agregar estos estilos al archivo styles.xml existente -->
+
+    <!-- Estilo para SearchView -->
+    <style name="SearchViewDark">
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="colorControlNormal">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/accent_green</item>
+    </style>
+
+    <!-- Estilo para Switch -->
+    <style name="SwitchTheme">
+        <item name="colorAccent">@color/accent_green</item>
+        <item name="colorSwitchThumbNormal">@color/text_secondary</item>
+        <item name="android:colorForeground">@color/accent_green</item>
+    </style>
+
+    <!-- Estilo para TextInputLayout -->
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/edittext_background</item>
+        <item name="boxStrokeColor">@color/accent_green</item>
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+    </style>
+
+    <!-- Estilo para botones flotantes -->
+    <style name="FabStyle">
+        <item name="backgroundTint">@color/accent_green</item>
+        <item name="tint">@android:color/white</item>
+        <item name="elevation">6dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+    </style>
+
+    <!-- Estilo para botones redondos pequeños -->
+    <style name="SmallRoundButton">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">@drawable/button_round_primary</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <!-- Estilo para indicadores de estado -->
+    <style name="StatusIndicator">
+        <item name="android:layout_width">8dp</item>
+        <item name="android:layout_height">8dp</item>
+        <item name="android:background">@drawable/circle_shape</item>
+    </style>
+
+    <!-- Estilo para texto de precios -->
+    <style name="PriceTextStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- Estilo para texto de información secundaria -->
+    <style name="InfoTextStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/text_tertiary</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- Estilo para títulos de sección -->
+    <style name="SectionTitleStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+
+    <!-- Dark ActionBar Theme -->
+    <style name="AppTheme.ActionBar">
+        <item name="actionBarStyle">@style/ActionBarDark</item>
+        <item name="android:actionBarStyle">@style/ActionBarDark</item>
+    </style>
+
+    <!-- Overlay para popups -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- Overlay para popups -->
+    <style name="AppTheme.PopupDarkOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- Tema para aplicaciones sin ActionBar -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Overlay para el AppBar -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_color_dark</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <!-- Overlay para el AppBar -->
+    <style name="AppTheme.AppBardarkOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <style name="ActionBarDark" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/colorPrimaryDark</item>
+        <item name="titleTextStyle">@style/ActionBarTitleText</item>
+    </style>
+
+    <style name="ActionBarTitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- AlertDialog Dark Theme -->
+    <style name="AlertDialogDark" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@color/dialogBackground</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="buttonBarButtonStyle">@style/DialogButtonDark</item>
+    </style>
+
+    <style name="DialogButtonDark" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <!-- Spinner Dark Theme -->
+    <style name="SpinnerDark">
+        <item name="android:background">@drawable/spinner_background_dark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="ButtonPrimary">
+        <item name="android:background">@drawable/button_primary_dark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="ButtonSecondary">
+        <item name="android:background">@drawable/button_secondary_dark</item>
+        <item name="android:textColor">#FF6B6B</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="CardViewDark">
+        <item name="cardBackgroundColor">#1E1E1E</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="HeaderText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SubHeaderText">
+        <item name="android:textColor">#CCCCCC</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MenuItemText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Estilo para Cards -->
+    <style name="CardViewStyle">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <!-- Estilo para botones de peligro -->
+    <style name="ButtonDanger">
+        <item name="android:background">@drawable/button_danger</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <!-- Estilo para EditText -->
+    <style name="EditTextCustom">
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+</resources>

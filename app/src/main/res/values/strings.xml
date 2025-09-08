@@ -1,0 +1,50 @@
+<resources>
+    <!-- Strings para GastosActivity -->
+    <string name="gastos_title">Gastos</string>
+    <string name="add_gasto">Agregar Gasto</string>
+    <string name="edit_gasto">Editar Gasto</string>
+    <string name="delete_gasto">Eliminar Gasto</string>
+    <string name="motivo_gasto">Motivo del gasto</string>
+    <string name="monto_gasto">Monto</string>
+    <string name="fecha_gasto">Fecha</string>
+    <string name="estado_gasto">Estado del gasto</string>
+    <string name="gasto_pagado">Pagado</string>
+    <string name="gasto_pendiente">Pendiente</string>
+    <string name="no_gastos">No hay gastos registrados</string>
+    <string name="filter_gastos">Filtrar gastos</string>
+    <string name="all_gastos">Todos</string>
+    <string name="paid_gastos">Pagados</string>
+    <string name="pending_gastos">Pendientes</string>
+
+    <string name="app_name">LizaChickApp</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="select_role">Selecciona tu perfil:</string>
+    <string name="login_button">INICIAR SESIÓN</string>
+    <string name="logout_button">CERRAR SESIÓN ACTUAL</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="welcome_message">Bienvenido, %s</string>
+    <string name="user_role">Perfil: %s</string>
+    <string name="user_email">Email: %s</string>
+    <string name="ventas">Ventas</string>
+    <string name="inventario">Inventario</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="reportes">Reportes</string>
+    <string name="productos">Productos</string>
+    <string name="configuracion">Configuración</string>
+    <string name="perfil">Perfil</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="exit_app">Salir de la aplicación</string>
+    <string name="exit_confirmation">¿Deseas cerrar la aplicación?</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="profile_title">Información del Usuario</string>
+    <string-array name="medios_pago">
+        <item>Efectivo</item>
+        <item>Yape</item>
+        <item>Plin</item>
+        <item>Transferencia</item>
+        <item>Tarjeta</item>
+        <item>Otro</item>
+    </string-array>
+</resources>
