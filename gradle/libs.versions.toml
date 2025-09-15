@@ -1,6 +1,6 @@
 [versions]
 kotlin = "1.9.22"
-agp = "8.12.2"
+agp = "8.12.3"
 
 # Cloud Storage
 google-cloud-storage = "2.29.1"
