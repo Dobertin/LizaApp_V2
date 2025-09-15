@@ -82,7 +82,9 @@ class DashboardActivity : AppCompatActivity() {
         btnGastos.isEnabled = isAdmin || isSeller
         btnPedidos.isEnabled = isAdmin || isSeller
         btnReportes.isEnabled = isAdmin || isSeller
-        btnCatalogos.isEnabled = isAdmin
+        btnConfiguracion.isEnabled = isAdmin
+        btnListadoVentas.isEnabled = isAdmin || isSeller
+        btnCatalogos.isEnabled = isAdmin || isSeller
 
         // Listeners centralizados
         mapOf(
@@ -90,13 +92,20 @@ class DashboardActivity : AppCompatActivity() {
             btnProductos to ProductosActivity::class.java,
             btnGastos to GastosActivity::class.java,
             btnPedidos to PedidosActivity::class.java,
-            btnReportes to ReportesActivity::class.java
+            btnReportes to ReportesActivity::class.java,
+            btnCatalogos to CatalogoActivity::class.java,
+            btnListadoVentas to ListaVentasActivity::class.java
         ).forEach { (button, activity) ->
             button.setOnClickListener { startActivity(Intent(this@DashboardActivity, activity)) }
         }
 
-        btnCatalogos.setOnClickListener {
-            startActivity(Intent(this@DashboardActivity, CatalogoActivity::class.java))
+        btnConfiguracion.setOnClickListener {
+            //startActivity(Intent(this@DashboardActivity, ConfiguracionActivity::class.java))
+            AlertDialog.Builder(this@DashboardActivity, R.style.AlertDialogDark)
+                .setTitle(R.string.alerta)
+                .setMessage(R.string.construccion)
+                .setPositiveButton(android.R.string.yes, null)
+                .show()
         }
     }
 

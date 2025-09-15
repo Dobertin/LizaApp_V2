@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permite acceso a archivos en almacenamiento externo privado de tu app -->
-    <external-files-path
-        name="external_files"
-        path="." />
-
-    <!-- Permite acceso a cache externo (útil para imágenes temporales) -->
-    <external-cache-path
-        name="external_cache"
-        path="." />
-
-    <!-- Permite acceso al almacenamiento interno privado -->
+    <!-- Archivos internos de la aplicación (Android 10+) -->
     <files-path
-        name="internal_files"
+        name="app_files"
         path="." />
 
-    <!-- Permite acceso a cache interno -->
+    <!-- Cache interno -->
     <cache-path
-        name="internal_cache"
+        name="app_cache"
+        path="." />
+
+    <!-- Almacenamiento externo privado (Android 9-) -->
+    <external-files-path
+        name="external_app_files"
+        path="." />
+
+    <!-- Cache externo -->
+    <external-cache-path
+        name="external_app_cache"
         path="." />
 
 </paths>

@@ -3,6 +3,11 @@
     <!-- Colores de fondo -->
     <color name="card_background_dark">#1E1E1E</color>
     <color name="ic_launcher_background">#8D0794</color>
+    <color name="colorSecondary">#888888</color>
+    <color name="colorBackground">#1a1a1a</color>
+    <color name="colorSurface">#2d2d2d</color>
+    <color name="colorOnSurface">#ffffff</color>
+    <color name="colorOnBackground">#ffffff</color>
 
     <!-- Estados -->
     <color name="status_active">#4CAF50</color>

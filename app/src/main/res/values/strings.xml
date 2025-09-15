@@ -31,8 +31,10 @@
     <string name="reportes">Reportes</string>
     <string name="productos">Productos</string>
     <string name="configuracion">Configuración</string>
+    <string name="alerta">Alerta</string>
     <string name="perfil">Perfil</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="construccion">Esta Funcionalidad Aun esta en Desarrollo</string>
     <string name="exit_app">Salir de la aplicación</string>
     <string name="exit_confirmation">¿Deseas cerrar la aplicación?</string>
     <string name="si">Sí</string>
