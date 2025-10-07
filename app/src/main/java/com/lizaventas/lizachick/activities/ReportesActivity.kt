@@ -465,7 +465,7 @@ class ReportesActivity : AppCompatActivity() {
         val dailyGastos = mutableMapOf<String, Float>()
         val labels = mutableListOf<String>()
 
-        // Generar etiquetas para los últimos 5 días
+        // Generar etiquetas para los últimos 5 días INCLUYENDO HOY
         val calendar = Calendar.getInstance()
         for (i in 4 downTo 0) {
             calendar.time = Date()
@@ -719,8 +719,13 @@ class ReportesActivity : AppCompatActivity() {
 
     private fun getWeekRange(): Pair<Date, Date> {
         val calendar = Calendar.getInstance()
+
+        // Ajustar al lunes de la semana actual
+        val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
+        val daysFromMonday = if (dayOfWeek == Calendar.SUNDAY) 6 else dayOfWeek - Calendar.MONDAY
+
         calendar.apply {
-            add(Calendar.DAY_OF_YEAR, -6) // 7 días incluyendo hoy
+            add(Calendar.DAY_OF_YEAR, -daysFromMonday)
             set(Calendar.HOUR_OF_DAY, 0)
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
@@ -733,6 +738,7 @@ class ReportesActivity : AppCompatActivity() {
             set(Calendar.HOUR_OF_DAY, 23)
             set(Calendar.MINUTE, 59)
             set(Calendar.SECOND, 59)
+            set(Calendar.MILLISECOND, 999)
         }
         val endDate = Date(endCalendar.timeInMillis)
 
@@ -799,6 +805,7 @@ class ReportesActivity : AppCompatActivity() {
             set(Calendar.HOUR_OF_DAY, 23)
             set(Calendar.MINUTE, 59)
             set(Calendar.SECOND, 59)
+            set(Calendar.MILLISECOND, 999)  // Cambiar a 999
         }
         val endDate = Date(endCalendar.timeInMillis)
 
@@ -807,6 +814,8 @@ class ReportesActivity : AppCompatActivity() {
 
     private fun getLast3WeeksRange(): Pair<Date, Date> {
         val calendar = Calendar.getInstance()
+
+        // Retroceder 2 semanas completas
         calendar.apply {
             add(Calendar.WEEK_OF_YEAR, -2)
             set(Calendar.DAY_OF_WEEK, Calendar.MONDAY)
@@ -817,7 +826,15 @@ class ReportesActivity : AppCompatActivity() {
         }
         val startDate = Date(calendar.timeInMillis)
 
-        val endDate = Date() // Hasta ahora
+        val endCalendar = Calendar.getInstance()
+        endCalendar.apply {
+            set(Calendar.HOUR_OF_DAY, 23)
+            set(Calendar.MINUTE, 59)
+            set(Calendar.SECOND, 59)
+            set(Calendar.MILLISECOND, 999)
+        }
+        val endDate = Date(endCalendar.timeInMillis)
+
         return Pair(startDate, endDate)
     }
 
