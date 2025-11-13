@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.lizaventas.lizachick.R
 import com.lizaventas.lizachick.databinding.ItemCarritoBinding
 import com.lizaventas.lizachick.models.ItemCarrito
+import kotlin.math.max
 
 class CarritoAdapter(
     private val items: List<ItemCarrito>,
@@ -28,7 +29,7 @@ class CarritoAdapter(
         val item = items[position]
 
         with(holder.binding) {
-            // Imagen en miniatura
+            // Imagen del producto
             Glide.with(holder.itemView.context)
                 .load(item.producto.imagenUrl)
                 .placeholder(R.drawable.ic_producto_placeholder)
@@ -36,26 +37,22 @@ class CarritoAdapter(
                 .centerCrop()
                 .into(ivProductoMini)
 
-            // Nombre del producto
+            // Información del producto
             tvNombreProducto.text = item.producto.nombre
-
-            // Información adicional del producto
             tvInfoProducto.text = "${item.producto.marcaNombre} - ${item.producto.categoriaNombre}"
+            tvStockDisponible.text = "Disponible: ${item.producto.stock}"
 
-            // Cantidad - sin listeners para evitar bucles infinitos
+            // Cantidad - sin listeners para evitar bucles
             etCantidad.removeTextChangedListener(etCantidad.tag as? TextWatcher)
             etCantidad.setText(item.cantidad.toString())
 
-            // Precio unitario - sin listeners para evitar bucles infinitos
+            // Precio unitario - sin listeners para evitar bucles
             etPrecio.removeTextChangedListener(etPrecio.tag as? TextWatcher)
             etPrecio.setText("%.2f".format(item.precioUnitario))
 
             // Subtotal
             val subtotal = item.cantidad * item.precioUnitario
             tvSubtotal.text = "S/. %.2f".format(subtotal)
-
-            // Stock disponible
-            tvStockDisponible.text = "Disponible: ${item.producto.stock}"
 
             // TextWatcher para cantidad
             val cantidadWatcher = object : TextWatcher {
@@ -91,15 +88,33 @@ class CarritoAdapter(
 
             // Botones para incrementar/decrementar cantidad
             btnDecrementar.setOnClickListener {
-                val nuevaCantidad = maxOf(1, item.cantidad - 1)
+                val nuevaCantidad = max(1, item.cantidad - 1)
                 if (nuevaCantidad != item.cantidad) {
                     onCantidadChanged(item, nuevaCantidad)
                 }
             }
 
             btnIncrementar.setOnClickListener {
-                val nuevaCantidad = item.cantidad + 1
-                onCantidadChanged(item, nuevaCantidad)
+                onCantidadChanged(item, item.cantidad + 1)
+            }
+
+            // Botones para incrementar/decrementar precio
+            btnDecrementarPrecio.setOnClickListener {
+                val nuevoPrecio = max(1.0, item.precioUnitario - 1.0)
+                if (nuevoPrecio != item.precioUnitario) {
+                    item.precioUnitario = nuevoPrecio
+                    etPrecio.setText("%.2f".format(nuevoPrecio))
+                    tvSubtotal.text = "S/. %.2f".format(item.cantidad * nuevoPrecio)
+                    onPrecioChanged(item, nuevoPrecio)
+                }
+            }
+
+            btnIncrementarPrecio.setOnClickListener {
+                val nuevoPrecio = item.precioUnitario + 1.0
+                item.precioUnitario = nuevoPrecio
+                etPrecio.setText("%.2f".format(nuevoPrecio))
+                tvSubtotal.text = "S/. %.2f".format(item.cantidad * nuevoPrecio)
+                onPrecioChanged(item, nuevoPrecio)
             }
 
             // Botón eliminar
@@ -107,9 +122,13 @@ class CarritoAdapter(
                 onEliminar(item)
             }
 
-            // Deshabilitar botón decrementar si cantidad es 1
+            // Deshabilitar botón decrementar cantidad si es 1
             btnDecrementar.isEnabled = item.cantidad > 1
             btnDecrementar.alpha = if (item.cantidad > 1) 1.0f else 0.5f
+
+            // Deshabilitar botón decrementar precio si está en el mínimo
+            btnDecrementarPrecio.isEnabled = item.precioUnitario > 1.0
+            btnDecrementarPrecio.alpha = if (item.precioUnitario > 1.0) 1.0f else 0.5f
 
             // Mostrar warning si cantidad excede stock
             if (item.cantidad > item.producto.stock) {

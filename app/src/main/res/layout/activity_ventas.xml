@@ -60,7 +60,6 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
 
-                    <!-- Botón como icono -->
                     <ImageButton
                         android:id="@+id/btnLimpiarFiltros"
                         android:layout_width="32dp"
@@ -75,7 +74,7 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Primera fila: búsqueda + familia olfativa -->
+                <!-- Primera fila: búsqueda + familia olfativa (ahora EditText) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -97,7 +96,7 @@
                             android:id="@+id/etFiltroNombre"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Buscar..."
+                            android:hint="Nombre..."
                             android:imeOptions="actionSearch"
                             android:inputType="text"
                             android:textColor="@android:color/white"
@@ -105,29 +104,27 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Familia Olfativa -->
-                    <LinearLayout
+                    <!-- Familia Olfativa (cambiado a EditText) -->
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="4dp"
-                        android:orientation="vertical">
+                        app:boxBackgroundColor="@color/purple_200"
+                        app:boxStrokeColor="@color/primary_color"
+                        app:hintTextColor="@color/text_hint">
 
-                        <TextView
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFiltroFamiliaOlfativa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Familia Olfativa"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_secondary"
-                            android:layout_marginBottom="4dp" />
+                            android:hint="Familia Olfativa..."
+                            android:imeOptions="actionSearch"
+                            android:inputType="text"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/white" />
 
-                        <Spinner
-                            android:id="@+id/spinnerFamiliaOlfativa"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="@drawable/spinner_background" />
-
-                    </LinearLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -206,7 +203,7 @@
                 android:padding="8dp"
                 android:clipToPadding="false" />
 
-            <!-- Carrito deslizable - ahora cubre toda la pantalla -->
+            <!-- Carrito deslizable -->
             <LinearLayout
                 android:id="@+id/layoutCarrito"
                 android:layout_width="match_parent"
@@ -247,7 +244,7 @@
 
                 </LinearLayout>
 
-                <!-- Lista del carrito con scroll mejorado -->
+                <!-- Lista del carrito -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerCarrito"
                     android:layout_width="match_parent"
@@ -257,7 +254,7 @@
                     android:clipToPadding="false"
                     android:paddingBottom="16dp" />
 
-                <!-- Footer del carrito con total y botones -->
+                <!-- Footer del carrito -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -303,7 +300,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
