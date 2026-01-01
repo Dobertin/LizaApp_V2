@@ -73,6 +73,7 @@ dependencies {
 
     // Glide
     implementation(libs.glide)
+    implementation(libs.androidx.games.activity)
     kapt(libs.glide.compiler)
 
     // Testing

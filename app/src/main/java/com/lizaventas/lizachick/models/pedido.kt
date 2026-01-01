@@ -18,5 +18,7 @@ data class Pedido(
     val estado: Boolean = true,
     val delivery: Boolean = false,
     val observaciones: String = "",
-    val detalles: Map<String, DetallePedido> = emptyMap()
+    val detalles: Map<String, DetallePedido> = emptyMap(),
+    val fechaEntrega: Long? = null, // Nueva propiedad
+    val entregado: Boolean = false // Nueva propiedad
 )

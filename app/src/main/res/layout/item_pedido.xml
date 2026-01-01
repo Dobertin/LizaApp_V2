@@ -41,6 +41,18 @@
 
         </LinearLayout>
 
+        <!-- Estado de entrega (nuevo) -->
+        <TextView
+            android:id="@+id/tvEstadoEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✓ ENTREGADO"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
         <!-- Información del pedido -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,6 +77,18 @@
                 android:textColor="#CCCCCC"
                 android:textSize="14sp"
                 android:layout_marginBottom="4dp" />
+
+            <!-- Fecha de entrega (nuevo) -->
+            <TextView
+                android:id="@+id/tvFechaEntrega"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entrega: 15/05 a las 2:00 PM"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvObservaciones"
@@ -143,41 +167,92 @@
             android:background="#333333"
             android:layout_marginVertical="8dp" />
 
-        <!-- Botones de acción -->
+        <!-- Botones de acción con iconos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="end">
 
+            <!-- Botón Marcar como Entregado - Icono de check -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMarcarEntregado"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                app:icon="@drawable/ic_check"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="#4CAF50" />
+
+            <!-- Botón Abonar - Icono de dinero/pago -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnModificar"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="Abonar"
-                android:textColor="#2196F3"
-                android:textSize="14sp" />
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="8dp"
+                app:icon="@drawable/ic_money"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="#2196F3" />
 
+            <!-- Botón Cancelar - Icono de X o cancelar -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCancelar"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="Cancelar"
-                android:textColor="#FF9800"
-                android:textSize="14sp" />
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="8dp"
+                app:icon="@drawable/ic_cancel"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="#FF9800" />
 
+            <!-- Botón Eliminar - Icono de basura -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEliminar"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Eliminar"
-                android:textColor="#F44336"
-                android:textSize="14sp" />
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="8dp"
+                app:icon="@drawable/ic_delete"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="#F44336" />
 
         </LinearLayout>
 
